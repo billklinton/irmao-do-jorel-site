@@ -1,0 +1,12 @@
+<div class="container">
+  <div *ngIf="episodios$ as episodios;">
+    <app-input-form [placeholder]="'Buscar episódio'" (textoBuscaEvent)="buscar($event)"></app-input-form>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let episodio of episodios">
+        <app-card-episodio [episodio]="episodio"></app-card-episodio>
+      </div>
+    </div>
+  </div>
+  <app-spinner [carregando]="carregando"></app-spinner>
+  <app-recurso-nao-encontrado *ngIf="erro" [mensagem]="'Episódios não foram encontrados :('"></app-recurso-nao-encontrado>
+</div>

@@ -1,0 +1,15 @@
+.navbar{
+  background-image: url('https://i.imgur.com/b6D9tNx.jpeg');
+  margin-bottom: 15px;
+}
+
+.navbar-nav li a{
+  color: rgb(228, 215, 35);
+  font-weight: 700;
+  font-size: x-large;
+  text-shadow: 1px 1px rgb(0, 0, 0);
+}
+
+.navbar-nav li a:hover{
+  color: rgb(241, 243, 118);
+}

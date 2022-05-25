@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  background-color: rgb(240, 248, 255);
+  font-family: 'Montserrat Alternates';
+}
+
+
+.btn{
+  background-color: rgb(31, 81, 196);
+}
+
+.card-title{
+  font-weight: 600;
+}

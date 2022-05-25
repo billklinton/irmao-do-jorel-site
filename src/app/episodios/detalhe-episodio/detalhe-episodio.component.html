@@ -1,0 +1,61 @@
+<div class="card container" *ngIf="episodio$ as episodio">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 *ngIf="episodio.nome" class="card-title text-center">
+        {{ episodio.nome }}
+      </h4>
+      <hr />
+      <div class="row" *ngIf="episodio.sinopse">
+        <div class="col-md-2">
+          <span>Sinopse:</span>
+        </div>
+        <div class="col-md-10">
+          {{ episodio.sinopse }}
+        </div>
+      </div>
+      <hr />
+      <div class="row" *ngIf="episodio.descricao">
+        <div class="col-md-2">
+          <span>Descrição:</span>
+        </div>
+        <div class="col-md-10">
+          {{ episodio.descricao }}
+        </div>
+      </div>
+      <hr />
+      <div class="row" *ngIf="episodio.temporadaId">
+        <div class="col-md-2">
+          <span>Temporada:</span>
+        </div>
+        <div class="col-md-10">
+          {{ episodio.temporadaId }}
+        </div>
+      </div>
+      <hr />
+      <div class="row" *ngIf="episodio.dataEstreia">
+        <div class="col-md-2">
+          <span>Data Estreia:</span>
+        </div>
+        <div class="col-md-10">
+          {{ episodio.dataEstreia | date: "d/M/yyyy" }}
+        </div>
+      </div>
+      <hr />
+      <div class="row" *ngIf="episodio.links">
+        <div class="col-md-2">
+          <span>Assistir:</span>
+        </div>
+        <div class="col-md-10">
+          <div *ngFor="let link of episodio.links">
+            <a [href]="link.url" target="_blank"> {{ link.fonte }} </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-spinner [carregando]="carregando"></app-spinner>
+<app-recurso-nao-encontrado
+  *ngIf="erro"
+  [mensagem]="'Episódio não foi encontrado :('"
+></app-recurso-nao-encontrado>

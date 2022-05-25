@@ -1,0 +1,68 @@
+<div class="container" *ngIf="personagem$ as personagem">
+  <div class="row">
+    <div class="col-md-4">
+      <img [src]="personagem.imagemUrl" alt="">
+    </div>
+    <div class="col-md-8">
+      <div *ngIf="personagem.frase">
+        <p class="frase">{{ personagem.frase }}</p>
+        <hr>
+      </div>
+      <div class="row" *ngIf="personagem.nome">
+        <div class="col-md-2">
+          <span>Nome:</span>
+        </div>
+        <div class="col-md-10">
+          {{ personagem.nome }}
+        </div>
+      </div>
+      <div class="row" *ngIf="personagem.idade">
+        <div class="col-md-2">
+          <span>Idade:</span>
+        </div>
+        <div class="col-md-10">
+          {{ personagem.idade }}
+        </div>
+      </div>
+      <div class="row" *ngIf="personagem.categoria">
+        <div class="col-md-2">
+          <span>Categoria:</span>
+        </div>
+        <div class="col-md-10">
+          {{ personagem.categoria }}
+        </div>
+      </div>
+      <div class="row" *ngIf="personagem.aparencia">
+        <div class="col-md-2">
+          <span>Aparência:</span>
+        </div>
+        <div class="col-md-10">
+          {{ personagem.aparencia }}
+        </div>
+      </div>
+      <div class="row" *ngIf="personagem.personalidade">
+        <div class="col-md-2">
+          <span>Personalidade:</span>
+        </div>
+        <div class="col-md-10">
+          {{ personagem.personalidade }}
+        </div>
+      </div>
+      <div class="row" *ngIf="personagem.vozes">
+        <div class="col-md-2">
+          <span>Vozes:</span>
+        </div>
+        <div class="col-md-10">
+          <div *ngFor="let voz of personagem.vozes">
+            <p>- {{ voz.nome }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-spinner [carregando]="carregando"></app-spinner>
+<app-recurso-nao-encontrado
+  *ngIf="erro"
+  [mensagem]="'Personagem não foi encontrado :('"
+></app-recurso-nao-encontrado>

@@ -1,0 +1,10 @@
+img {
+  height: 200px;
+  width: 230px;
+  margin: 10px;
+}
+
+.card-root{
+  max-width: 540px;
+  cursor: pointer;
+}
