@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  base_url: 'https://irmao-do-jorel-api.herokuapp.com/api'
+  base_url: 'http://irmaodojorel.com/api'
 };
